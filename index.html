@@ -17,15 +17,154 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+To help diagnose wether someone has a fractured or a sprained ankle. 
  
 Known Issues:
 blah, blah, blah, blah
 -->
 
    <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
+       <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+        var broken_count = 0;
+        var sprain_count = 0;
+// variables for the cold and allergies 
+
+        function brokenAdd(){
+            broken_count = broken_count + 1; 
+		alert("broken_count: " + broken_count); 
+//The above function allows for the answers that correlate to broken be added together. 
+        }
+
+        function sprainAdd(){
+            sprain_count = sprain_count + 1;
+		alert("sprain_count: " + sprain_count);
+// The above function allows for the answer that correlate to allergies be added together.        
+	}
+	
+	function displayResults(){
+		var total = broken_count + sprain_count;
+		alert("broken percentage: " + (broken_count / total) * 100 +
+		      "\sprain percentage: " + (sprain_count / total) * 100);
+	// The function calculates the data into precentages and displays the results. 
+	}
+	
+  </script>
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot"> <!-- Header and title of the page-->
+	<h1>Broken or Sprained?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you having trouble tellling if your ankle is broken or sprained. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<div class="page" id="one"> <!-- creates the header and title of the page-->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container"> <!-- creates the container for text-->
+        <p>Do you have pain with numbness and swelling?</p>   <!-- Question the page is asking--> 
+	<a href="#two"  onclick="brokenAdd();" class="w3-btn w3-black"> Yes </a> <!-- The next two lines are the buttons for sprain or broken.-->
+	<a href="#two"  onclick="sprainAdd();" class="w3-btn w3-black"> No </a>
+    	</div>
+	
+<html>
+<body>
+
+<h2>HTML Image</h2>
+	<img src="https://nortonhealthcare.com/wp-content/uploads/sprain-vs-break-c.jpg" alt="Girl in a hospital" width="500" height="500">
+
+	</body>
+	</html>
+</div>
+
+<div class="page" id="two"><!-- Next lines of code create the header and title of the page. -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container"> <!-- creates the container for text on the page--> 
+	<p>Can you walk on it?</p> <!-- Question the page is asking.--> 
+	<a href="#three"  onclick="sprainAdd();" class="w3-btn w3-black"> Yes </a> <!-- The next two lines are the buttons for sprain or broken.-->
+        <a href="#three"  onclick="brokenAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>	
+	
+<div class="page" id="three"> <!-- Next lines of code create the header and title of the page.--> 
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container"> <!-- creates the container for text on the page.-->
+	<p>Did the swelling happen gradually?</p> <!-- question the page is asking.--> 
+	<a href="#four"  onclick="sprainAdd();" class="w3-btn w3-black"> Yes </a><!-- The next two linews are the buttons for sprain or broken.--> 
+        <a href="#four"  onclick="brokenAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>	
+	
+<div class="page" id="four"> <!-- Next lines of code create the header and title of the page.--> 
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container"> <!-- creates the container for text on the page.--> 
+	<p>Is there swelling and does the bone or joint look deformed or out of place ?</p><!-- Question the page is asking.--> 
+	<a href="#five"  onclick="brokenAdd();" class="w3-btn w3-black"> Yes </a> <!-- The next two lines are the buttons for sprain or broken. --> 
+	<a href="#five"  onclick="sprainAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>	
+	
+<div class="page" id="five"> <!-- creates the header and title for the page.--> 
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+	<div id="content" class="w3-container"> <!-- container for text.-->
+	<p>Results</p>
+		<a onclick="displayResults();" class="w3-btn w3-grey w3-round"> Show Results </a><!-- The button to see the results. Having trouble getting the results to show. --> 	
+</div>			    
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+	   
 	   
    </body>
 </html>
